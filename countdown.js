@@ -1,6 +1,8 @@
+// Original project: https://github.com/ferminrp/scriptable-countdown-widget
+// Based on your phone model, you may need to adjust the font size at line 26.
 // Enter the date until the countdown
-let endDate = new Date("March 3, 2024 18:00:00")
-
+// Event: 
+let endDate = new Date("August 24, 2024 00:00:00")
 
 let now = new Date()
 let difference = endDate - now
@@ -11,9 +13,8 @@ let seconds = Math.floor((difference % (1000 * 60)) / 1000)
 
 let widget = new ListWidget()
 
-
 // Choose a color and comment the rest lines. (You can add your own color, this are the ones I recommend
-widget.backgroundColor = new Color("6841D8") // Majorelle Blue
+// widget.backgroundColor = new Color("6841D8") // Majorelle Blue
 // widget.backgroundColor = new Color("EF3159") // Crayola Red
 // widget.backgroundColor = new Color("EFA008") // Gamboge (Orange)
 // widget.backgroundColor = new Color("F24D2F") // Cinnabar (tipo rojo)
@@ -21,28 +22,24 @@ widget.backgroundColor = new Color("6841D8") // Majorelle Blue
 // widget.backgroundColor = new Color("2BB792") // Mint
 // widget.backgroundColor = new Color("27A9D0") // Pacific cyan
 
-
-
-
-let countdown = widget.addText(`${days}`)
-countdown.font = new Font("ArialRoundedMTBold", 42, "bold")
+let countdown = widget.addText(`${days}`+"d")
+countdown.font = new Font("ArialRoundedMTBold", 42, "bold") // This font size may need to be adjusted based on your phone model. The size is fine on an iPhone 14 Pro MAX.
 countdown.textColor = Color.white()
 
-widget.addSpacer(2)
+// widget.addSpacer(2)
 
 // You can change the next line to your own language like "Days until"
-let diasHasta = widget.addText("dias hasta")
-diasHasta.font = new Font("ArialRoundedMTBold", 16)
-diasHasta.textColor = Color.white()
-diasHasta.textOpacity = 0.8
+// let daysUntil = widget.addText("days until...")
+// daysUntil.font = new Font("ArialRoundedMTBold", 16)
+// daysUntil.textColor = Color.white()
+// daysUntil.textOpacity = 0.8
 
-widget.addSpacer(2)
+// widget.addSpacer(2)
 
 // Change the name of the event
-let ocasion = widget.addText("Roadtrip")
-
-ocasion.font = new Font("ArialRoundedMTBold", 20)
-ocasion.textColor = Color.white()
+// let occasion = widget.addText("WEDDING!")
+// occasion.font = new Font("ArialRoundedMTBold", 20)
+// occasion.textColor = Color.white()
 
 Script.setWidget(widget)
 Script.complete()
